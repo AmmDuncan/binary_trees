@@ -14,22 +14,8 @@ void binary_tree_delete(binary_tree_t *tree)
 
 	left = tree->left;
 	right = tree->right;
+	free(tree);
 
-	/* Take left path and delete nodes*/
-	if (left == NULL)
-	{
-		if (right == NULL)
-		{
-			free(tree);
-		}
-		else
-		{
-			binary_tree_delete(right);
-		}
-	}
-	else
-	{
-		binary_tree_delete(left);
-		binary_tree_delete(right);
-	}
+	binary_tree_delete(left);
+	binary_tree_delete(right);
 }
