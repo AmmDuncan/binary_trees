@@ -34,5 +34,51 @@ int binary_tree_is_root(const binary_tree_t *node);
 void binary_tree_preorder(const binary_tree_t *tree, void (*func)(int));
 void binary_tree_inorder(const binary_tree_t *tree, void (*func)(int));
 void binary_tree_postorder(const binary_tree_t *tree, void (*func)(int));
+size_t binary_tree_height(const binary_tree_t *tree);
+size_t binary_tree_depth(const binary_tree_t *tree);
+size_t binary_tree_size(const binary_tree_t *tree);
+size_t binary_tree_leaves(const binary_tree_t *tree);
+size_t binary_tree_nodes(const binary_tree_t *tree);
+int binary_tree_balance(const binary_tree_t *tree);
+int binary_tree_is_full(const binary_tree_t *tree);
+int binary_tree_is_perfect(const binary_tree_t *tree);
+binary_tree_t *binary_tree_sibling(binary_tree_t *node);
+binary_tree_t *binary_tree_uncle(binary_tree_t *node);
+binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
+				     const binary_tree_t *second);
+void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int));
+int binary_tree_is_complete(const binary_tree_t *tree);
+const binary_tree_t **createQueue(int *front, int *rear);
+void enQueue(const binary_tree_t **queue, int *rear,
+	     const binary_tree_t *new_node);
+const binary_tree_t *deQueue(const binary_tree_t **queue, int *front);
+int isQueueEmpty(int *front, int *rear);
+binary_tree_t *binary_tree_rotate_left(binary_tree_t *tree);
+binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree);
+levelorder_queue_t *create_node(binary_tree_t *node);
+void free_queue(levelorder_queue_t *head);
+void push(binary_tree_t *node, levelorder_queue_t *head,
+	  levelorder_queue_t **tail);
+void pop(levelorder_queue_t **head);
+int binary_tree_is_bst(const binary_tree_t *tree);
+bst_t *bst_insert(bst_t **tree, int value);
+bst_t *array_to_bst(int *array, size_t size);
+bst_t *bst_search(const bst_t *tree, int value);
+bst_t *bst_remove(bst_t *root, int value);
+bst_t *bst_remove_rc(bst_t *root, bst_t *node, int value);
+bst_t *bst_delete(bst_t *root, bst_t *node);
+bst_t *inorder_successor(bst_t *root);
+int binary_tree_is_avl(const binary_tree_t *tree);
+int is_avl(const binary_tree_t *tree, int lo, int hi);
+size_t avl_height(const binary_tree_t *tree);
+size_t bheight(const binary_tree_t *tree);
+avl_t *avl_insert_rc(avl_t **tree, avl_t *parent, avl_t **new, int value);
+avl_t *avl_insert(avl_t **tree, int value);
+avl_t *array_to_avl(int *array, size_t size);
+avl_t *avl_remove(avl_t *root, int value);
+bst_t *bst_remove(bst_t *root, int value);
+int remove_type(bst_t *root);
+int successor(bst_t *node);
+void bal(avl_t **tree);
 
 #endif
